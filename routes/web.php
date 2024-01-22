@@ -34,3 +34,4 @@ Route::delete('/mahasiswa/delete/{mahasiswa}', [\App\Http\Controllers\Mahasiswa:
 Route::get('/welcome', function () {
     return view('welcome');
 });
+
