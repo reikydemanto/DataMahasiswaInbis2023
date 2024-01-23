@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\KlinikHewan;
 use App\Http\Requests\MahasiswaRequest;
 use App\Models\Mahasiswa;
 use Illuminate\Support\Facades\Route;
@@ -15,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [\App\Http\Controllers\Mahasiswa::class, 'index']);
+// Route::get('/', [\App\Http\Controllers\Mahasiswa::class, 'index']);
 
 Route::get('/mahasiswa', [\App\Http\Controllers\Mahasiswa::class, 'tampilMahasiswa'])->name('mahasiswa.index');
 
@@ -34,4 +35,14 @@ Route::delete('/mahasiswa/delete/{mahasiswa}', [\App\Http\Controllers\Mahasiswa:
 Route::get('/welcome', function () {
     return view('welcome');
 });
+
+Route::get('/klinik',[KlinikHewan::class,'index'] )->name('klinik.index');
+Route::get('/',function(){return redirect()->route('klinik.index');});
+Route::get('/klinik/add',[KlinikHewan::class,'addPasien'] )->name('klinik.add');
+Route::post('/klinik/add',[KlinikHewan::class,'addPasienAction'] )->name('klinik.addAction');
+Route::put('/klinik/add/{pasien}', [KlinikHewan::class, 'editPasienPut'])->name('pasien.edits');
+Route::get('/klinik/{pasien}/edit', [KlinikHewan::class, 'editPasien'])->name('pasien.edit');
+Route::delete('/klinik/delete/{pasien}', [KlinikHewan::class, 'deletePasien'])->name('pasien.delete');
+Route::get('/klinik/{pasien}',[KlinikHewan::class,'detailPasien'])->name('klinik.pasien');
+
 

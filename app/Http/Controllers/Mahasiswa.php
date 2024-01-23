@@ -24,7 +24,8 @@ class Mahasiswa extends Controller
 
     public function tampilDetailMahasiswa(\App\Models\Mahasiswa $mahasiswa)
     {
-        return view('mahasiswa', ['daftarMahasiswa' => $mahasiswa]);
+        // return view('mahasiswa', ['daftarMahasiswa' => $mahasiswa]);
+        return $mahasiswa;
     }
 
     public function tambahMahasiswa(\App\Http\Requests\MahasiswaRequest $request)

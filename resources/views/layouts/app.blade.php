@@ -14,9 +14,13 @@
         .page-container .main-content {
             padding: 50px;
         }
+
+        img{
+            max-height: 200px;
+        }
     </style>
 
-    <title>Mahasiswa Inbis</title>
+    <title>Daftar Pasien</title>
     @yield('styles')
 </head>
 
