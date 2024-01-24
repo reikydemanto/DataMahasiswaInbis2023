@@ -35,12 +35,6 @@
     </tbody>
 </table>
 
-{{-- @if ($daftarPasien->count())
-        <nav class="mt-4"> --}}
-{{ $daftarPasien->links() }}
-{{-- </nav>
-@endif--}}
-
 @endsection
 
 @push('scripts')

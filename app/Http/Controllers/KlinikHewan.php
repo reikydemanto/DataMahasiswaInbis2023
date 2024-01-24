@@ -11,7 +11,7 @@ class KlinikHewan extends Controller
 {
     public function index()
     {
-        return view('klinik', ['daftarPasien' => Pasien::latest()->paginate(10),'title' => 'Daftar Pasien']);
+        return view('klinik', ['daftarPasien' => Pasien::latest()->get(),'title' => 'Daftar Pasien']);
     }
 
     public function detailPasien(Pasien $pasien)
