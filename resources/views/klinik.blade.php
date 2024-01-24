@@ -42,3 +42,11 @@
 @endif--}}
 
 @endsection
+
+@push('scripts')
+    <script>
+        $(document).ready(function () {
+            $('#data-table').DataTable();
+        });
+    </script>
+@endpush

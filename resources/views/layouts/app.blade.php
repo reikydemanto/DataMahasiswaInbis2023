@@ -15,13 +15,20 @@
             padding: 50px;
         }
 
-        img{
+        img {
             max-height: 200px;
         }
+
     </style>
 
     <title>Daftar Pasien</title>
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
     @yield('styles')
+
+    @stack('scripts')
 </head>
 
 <body>
@@ -39,7 +46,7 @@
                                     {{-- <div class="media align-items-center"> --}}
                                     <h1 class="mt-4"><b>@yield('title')</b></h1>
                                     <div>
-                                        @if (session()->has('success'))
+                                        @if(session()->has('success'))
                                             <div>{{ session('success') }}</div>
                                         @endif
                                     </div>
