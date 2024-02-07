@@ -45,4 +45,7 @@ Route::get('/klinik/{pasien}/edit', [KlinikHewan::class, 'editPasien'])->name('p
 Route::delete('/klinik/delete/{pasien}', [KlinikHewan::class, 'deletePasien'])->name('pasien.delete');
 Route::get('/klinik/{pasien}',[KlinikHewan::class,'detailPasien'])->name('klinik.pasien');
 
+Route::get('/sendEmail',[\App\Http\Controllers\SendEmail::class,'index']);
+Route::post('/sendEmail/send',[\App\Http\Controllers\SendEmail::class,'send']);
+
 
