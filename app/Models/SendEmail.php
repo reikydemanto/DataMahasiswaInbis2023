@@ -36,12 +36,12 @@ class SendEmail extends Model
         }',
         CURLOPT_HTTPHEADER => array(
             'Accept: application/json',
-            'api-key: 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',
+            'api-key:'.env('BREVO_API_KEY'),
             'Content-Type: application/json',
             'Cookie: __cf_bm=ze4P4c2VmLMoJv_FGJrq9Pp3vpZCZwslgty1GTzIpPo-1707281287-1-AZ1iny4K0i1abH4cvDUiy0NRHl3aUTN4bDiYfD2AiVbkjSgRf8IK99ylKWkPZYxQVe2CfUxaA5VGweN+ezL8NOc='
         ),
         ));
-
+        
         $response = curl_exec($curl);
 
         curl_close($curl);
